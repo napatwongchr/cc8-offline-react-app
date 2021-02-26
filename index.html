@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lets React</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <div id="root"></div>
@@ -14,33 +14,20 @@
     <script type="text/babel">
       const rootElement = document.getElementById("root");
 
-      let name = "John";
-      let name2 = "Jame";
-
-      let newContainerClassName = "container";
-      newContainerClassName += " hidden";
-
-      let props = {
-        className: "hello-react-text",
-        onClick: () => {
-          console.log("ok clicked !");
-        },
-      };
+      function GreetingMessage(props) {
+        props.age = props.age + 50;
+        return (
+          <h1 className="hello-react-text">
+            Hello, {props.name} !, <br /> Age: {props.age}
+          </h1>
+        );
+      }
 
       const element = (
-        <div id="section" className={newContainerClassName}>
-          <h1
-            className="hello-react-text"
-            onClick={() => {
-              console.log("ok clicked !");
-            }}
-          >
-            Hello, React !
-          </h1>
-          <h1 {...props}>Hello, React !</h1>
-
-          <h2>Hello {name}</h2>
-          <h2>Hello {name2}</h2>
+        <div className="container">
+          <GreetingMessage name="React" age={30} />
+          <GreetingMessage name="World" age={25} />
+          <GreetingMessage name="John" age={60} />
         </div>
       );
 
