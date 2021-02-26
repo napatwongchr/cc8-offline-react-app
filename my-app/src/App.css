@@ -1,0 +1,27 @@
+.postapp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: lightblue;
+}
+
+.add-post-button {
+  height: 40px;
+}
+
+.postapp-postlist-container {
+  display: flex;
+  justify-content: center;
+}
+
+.postapp-postlist {
+  width: 50%;
+  margin-top: 10px;
+}
+
+.postapp-post {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: plum;
+}
