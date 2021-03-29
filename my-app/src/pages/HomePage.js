@@ -2,12 +2,12 @@
 import { css } from "@emotion/react";
 import { useHistory } from "react-router-dom";
 import Button from "../components/Button";
-import { useCounter } from "../contexts/Counter";
 import { usePosts } from "../utilities/posts";
+import { useSelector } from "react-redux";
 
 function HomePage() {
   const { posts, isError, handleDeletePost } = usePosts();
-  const { state } = useCounter();
+  const counter = useSelector((state) => state.counter.counter);
   let history = useHistory();
 
   function handleAddPostClick() {
@@ -66,7 +66,7 @@ function HomePage() {
           text-align: center;
         `}
       >
-        <h1>Counter: {state.counter}</h1>
+        <h1>Counter: {counter}</h1>
       </div>
     </div>
   );
