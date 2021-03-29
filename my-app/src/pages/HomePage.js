@@ -6,7 +6,7 @@ import { usePosts } from "../utilities/posts";
 import { useSelector } from "react-redux";
 
 function HomePage() {
-  const { posts, isError, handleDeletePost } = usePosts();
+  const { posts, isError, isLoading, handleDeletePost } = usePosts();
   const counter = useSelector((state) => state.counter.counter);
   let history = useHistory();
 
@@ -31,6 +31,7 @@ function HomePage() {
       </div>
 
       <div className="post-list">
+        {isLoading && <h1>Loading ...</h1>}
         {isError && <h1>Something went wrong Please try again tmr.</h1>}
         {posts.map((post) => {
           return (
