@@ -10,18 +10,30 @@
   height: 40px;
 }
 
-.postapp-postlist-container {
+/* .post-list-container {
   display: flex;
   justify-content: center;
+} */
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.postapp-postlist {
+.post {
   width: 50%;
-  margin-top: 10px;
+  padding: 15px;
+  margin: 15px 0;
+  background-color: rosybrown;
 }
 
-.postapp-post {
-  padding: 20px;
-  margin-top: 20px;
-  background-color: plum;
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-footer-edit-button {
+  margin-right: 20px;
 }
