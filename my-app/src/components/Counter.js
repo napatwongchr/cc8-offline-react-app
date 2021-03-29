@@ -17,27 +17,9 @@ function Counter(props) {
   return (
     <div>
       <h1>{props.counter}</h1>
-      <button
-        onClick={() => {
-          props.setCounter(props.counter + 1);
-        }}
-      >
-        add
-      </button>
-      <button
-        onClick={() => {
-          props.setCounter(props.counter - 1);
-        }}
-      >
-        subtract
-      </button>
-      <button
-        onClick={() => {
-          props.setCounter(0);
-        }}
-      >
-        reset
-      </button>
+      <button onClick={props.addCounter}>add</button>
+      <button onClick={props.subtractCounter}>subtract</button>
+      <button onClick={props.resetCounter}>reset</button>
     </div>
   );
 }
