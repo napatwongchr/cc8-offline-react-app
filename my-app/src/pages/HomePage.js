@@ -1,45 +1,17 @@
 /** @jsxImportSource @emotion/react */
-import { useState, useEffect } from "react";
 import { css } from "@emotion/react";
 import { useHistory } from "react-router-dom";
 import Button from "../components/Button";
 import { useCounter } from "../contexts/Counter";
+import { usePosts } from "../utilities/posts";
 
 function HomePage() {
-  const [posts, setPosts] = useState([]);
-  const [isError, setIsError] = useState(null);
+  const { posts, isError, handleDeletePost } = usePosts();
   const { state } = useCounter();
   let history = useHistory();
 
-  useEffect(function () {
-    async function getPosts() {
-      try {
-        let response = await fetch("http://localhost:8000/posts");
-        let data = await response.json();
-        setPosts(data.data);
-      } catch (error) {
-        setIsError(true);
-        console.log("error !");
-      }
-    }
-    getPosts();
-  }, []);
-
   function handleAddPostClick() {
     history.push("/addpost");
-  }
-
-  async function handleDeletePost(postId) {
-    let response = await fetch("http://localhost:8000/posts/" + postId, {
-      method: "DELETE",
-    });
-
-    if (response.ok) {
-      let newPosts = posts.filter((post) => {
-        return post.id !== postId;
-      });
-      setPosts(newPosts);
-    }
   }
 
   return (
