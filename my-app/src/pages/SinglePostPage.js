@@ -18,7 +18,7 @@ function SinglePostPage() {
     }
 
     getPostById();
-  }, []);
+  }, [params.postId]);
 
   return (
     <div>

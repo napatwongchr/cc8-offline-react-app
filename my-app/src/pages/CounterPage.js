@@ -1,26 +1,13 @@
-import { useState, useReducer } from "react";
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
+
 import Counter from "../components/Counter";
-
-const INITIAL_STATE = {
-  counter: 0,
-};
-
-function counterReducer(state, action) {
-  switch (action.type) {
-    case "add_counter":
-      return { counter: state.counter + 1 };
-    case "subtract_counter":
-      return { counter: state.counter - 1 };
-    case "reset_counter":
-      return { counter: 0 };
-    default:
-      return state;
-  }
-}
+import { useCounter } from "../contexts/Counter";
 
 function CounterPage() {
   const [toggle, setToggle] = useState(true);
-  const [state, dispatch] = useReducer(counterReducer, INITIAL_STATE);
+  const { state, dispatch } = useCounter();
+  const history = useHistory();
 
   return (
     <div>
@@ -35,6 +22,7 @@ function CounterPage() {
       )}
       <h1>Show Counter: {state.counter}</h1>
       <button onClick={() => setToggle(!toggle)}>Toggle</button>
+      <button onClick={() => history.push("/")}>Back To Home</button>
     </div>
   );
 }

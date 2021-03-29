@@ -3,11 +3,12 @@ import { useState, useEffect } from "react";
 import { css } from "@emotion/react";
 import { useHistory } from "react-router-dom";
 import Button from "../components/Button";
+import { useCounter } from "../contexts/Counter";
 
 function HomePage() {
   const [posts, setPosts] = useState([]);
   const [isError, setIsError] = useState(null);
-
+  const { state } = useCounter();
   let history = useHistory();
 
   useEffect(function () {
@@ -29,7 +30,6 @@ function HomePage() {
   }
 
   async function handleDeletePost(postId) {
-    console.log("postId:", postId);
     let response = await fetch("http://localhost:8000/posts/" + postId, {
       method: "DELETE",
     });
@@ -87,6 +87,14 @@ function HomePage() {
             </div>
           );
         })}
+      </div>
+
+      <div
+        css={css`
+          text-align: center;
+        `}
+      >
+        <h1>Counter: {state.counter}</h1>
       </div>
     </div>
   );
