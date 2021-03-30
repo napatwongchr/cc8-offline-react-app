@@ -17,4 +17,8 @@ export const theme = extendTheme({
       100: "#FFFFFF",
     },
   },
+  fonts: {
+    heading: "Prompt",
+    body: "Prompt",
+  },
 });
