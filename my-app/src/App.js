@@ -4,6 +4,7 @@ import AddPostPage from "./pages/AddPostPage";
 import SinglePostPage from "./pages/SinglePostPage";
 import CounterPage from "./pages/CounterPage";
 import DesignSystemPage from "./pages/DesignSystemPage";
+import SignUpPage from "./pages/SignUpPage";
 import { CounterProvider } from "./contexts/Counter";
 
 import "./App.css";
@@ -14,6 +15,7 @@ function App() {
       <CounterProvider>
         <BrowserRouter>
           <Switch>
+            <Route path="/signup" component={SignUpPage} />
             <Route path="/design-system" component={DesignSystemPage} />
             <Route path="/counter" component={CounterPage} />
             <Route path="/post/:postId" component={SinglePostPage} />
