@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import Buttons from "../components/DesignSystem/Buttons";
 import Colors from "../components/DesignSystem/Colors";
+import Inputs from "../components/DesignSystem/Inputs";
 
 function DesignSystemPage() {
   return (
@@ -11,6 +12,7 @@ function DesignSystemPage() {
       <Box p="10">
         <Colors />
         <Buttons />
+        <Inputs />
       </Box>
     </Box>
   );
