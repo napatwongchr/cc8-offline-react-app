@@ -1,14 +1,14 @@
 import { extendTheme } from "@chakra-ui/react";
-
+import Button from "./Button";
 export const theme = extendTheme({
   colors: {
     text: "#424642",
-    brand: {
+    primary: {
       200: "#424642",
       100: "#536162",
     },
+    secondary: "#C06014",
     highlight: {
-      200: "#C06014",
       100: "#F27B19",
     },
     muted: {
@@ -20,5 +20,8 @@ export const theme = extendTheme({
   fonts: {
     heading: "Prompt",
     body: "Prompt",
+  },
+  components: {
+    Button,
   },
 });
