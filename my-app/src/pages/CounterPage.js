@@ -6,7 +6,7 @@ import {
   increment,
   reset,
   addByAmount,
-} from "../feature/counter/counterSlice";
+} from "../features/counter/counterSlice";
 import Counter from "../components/Counter";
 
 function CounterPage() {
