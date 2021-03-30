@@ -4,6 +4,7 @@ import AddPostPage from "./pages/AddPostPage";
 import SinglePostPage from "./pages/SinglePostPage";
 import CounterPage from "./pages/CounterPage";
 import { CounterProvider } from "./contexts/Counter";
+
 import "./App.css";
 
 function App() {
