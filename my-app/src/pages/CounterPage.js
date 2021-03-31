@@ -1,12 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  decrement,
-  increment,
-  reset,
-  addByAmount,
-} from "../feature/counter/counterSlice";
+import { decrement, increment, reset } from "../feature/counter/counterSlice";
 import Counter from "../components/Counter";
 
 function CounterPage() {
@@ -24,7 +19,6 @@ function CounterPage() {
           addCounter={() => dispatch(increment())}
           subtractCounter={() => dispatch(decrement())}
           resetCounter={() => dispatch(reset())}
-          addByAmount={() => dispatch(addByAmount(10))}
         />
       )}
       <h1>Show Counter: {counter}</h1>
